@@ -1,0 +1,14 @@
+Functional Interface - A functional interface is an interface that specifies exactly one abstract method
+					   So, FunctionalInterface can have default methods
+
+Constructor reference:
+	Apple::new
+
+Terminal Operation ~ Terminal operation produce a result from a Stream pipeline ( a result is any non-stream value , including void)
+
+Working with Stream invovles 3 items:
+1. A data source
+2. A chain of intermediate operations
+3. A terminal operation
+
+
