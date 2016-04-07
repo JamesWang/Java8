@@ -3,6 +3,8 @@ package com.jnw.java8ia.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Menus {
 	private final static List<Dish> menus = Arrays.asList(
@@ -24,6 +26,12 @@ public class Menus {
 		//menus.allDishNames().forEach( System.out::println);
 		//3. Summarize all calories
 		System.out.println(menus.sumCalories() );
+		
+		
+		IntStream intStream = menus.menus.stream().mapToInt( Dish::getCalories);
+		Stream<Integer> boxed = intStream.boxed();
+		//System.out.println(boxed.collect(Collectors.toList()));
+		System.out.println("First 3 items:" + boxed.limit(3).collect(Collectors.toList()));
 	}
 	private List<String> nHighCaloricDishName( int n, int limit ) {
 		return menus.stream().filter( dish -> dish.getCalories() > limit )
